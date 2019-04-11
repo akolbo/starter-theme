@@ -27,6 +27,11 @@
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content
+
+					{{dummy(500)|wpautop}}
+					{{post.title|dummy(15)}}
+					{{tweet.content|twitterify}}
+
 				{% endblock %}
 			</div>
 			{% if sidebar %}

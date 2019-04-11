@@ -1,10 +1,58 @@
-{% if menu %}
-	<ul>
-	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'menu': item.children} %}
-		</li>
-	{% endfor %}
-	</ul>
-{% endif %}
+<nav class="navigation">
+	<div class="navigation__container container">
+		<div class="navigation__logo">							
+			<a class="" href="{{ site.url }}" rel="home">
+				<picture>        
+					{#	Supporting PICTURE in IE9 :
+					While most versions of IE (even older ones!) are supported well, IE9 has a little conflict to work around. To support IE9, you will need to wrap a video element wrapper around the source elements in your picture tag. You can do this using conditional comments, like so...leave the html comments #}				
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					
+					<!--JPEG Source Type with Resized Proportions Applied (will crop image to fit proportion
+					You can also replace 'default' with 'top, bottom, left, right' to crop from different sides of the image. )--> 
+					<source 
+					class="lazyload"
+					type="image/jpeg" 
+					alt="{{ Image(custom_logo).alt }}" 
+						srcset="{{ custom_logo_url|relative|retina(1) }} 1x,
+								{{ custom_logo_url|relative|retina(2) }} 2x" 
+						sizes="(max-width: 400px) 100vw, 400px">					
+					
+					<!-- Image fallback for older browsers that don't support Picture element --> 
+					<img 
+					class="lazyload"
+					alt="{{ Image(custom_logo).alt }}"
+					src="{{custom_logo_url|relative}}">
+				</picture><!--end logo picture-->
+			</a><!--end logo link-->
+		</div>
+
+	
+
+
+		<div class="navigation__menu">
+			<div class="main-navigation">
+						{% if menu %}
+						
+						<ul class="list list--inline margin-null type-right padding-y padding-xs">
+							{% for item in menu %}
+								<li class="menu__item list__item {{ item.classes | join(' ') }}">
+									<a class="color-secondary title title--lg type-uppercase padding-xxs" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>		
+								</li>
+							{% endfor %}
+							</ul>
+						
+						{% endif %}
+					
+				
+				
+					{# <div class="hidden-lg">
+						<ul>
+							{% for slug, item in nav %}
+								<li><a href="/{{ slug }}">{{ item.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</div> #}
+				</div>                                                           
+		</div>
+	</div>
+</nav> 
