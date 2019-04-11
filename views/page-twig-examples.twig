@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<h1>Twig Examples</h1>
+
+<h2>Timber Sugar - Lorem Ipsum Dummy Text</h2>
+<p>{{dummy(500)|wpautop}}</p>
+
+<h2>Timber Sugar - Twitterify Lorem Ipsum Twitter Post</h2>
+{{tweet.content|twitterify}}
+
+<h2>Timber Sugar - Dummy Titles</h2>
+{% for posts in 0..9 %}
+    <h1>{{post.title|dummy(15)}}</h1>					
+{% endfor %}
+
+<h2>Custom Post Type Title</h2>
+{% for client in clients %}
+    <h1>{{ client.title }}</h1>
+{% endfor %}
+
+<h2>Custom Post Type Content Fields</h2>
+{% for client in clients %}
+
+<h2>Custom Post Type - Image</h2>
+<img src="{{ Image(client.client_logo).src }}" />
+
+<h2>Custom Post Type - Image with Letterbox</h2>
+<img src="{{ Image(client.client_logo).src|letterbox(400, 400, '#333') }}" />
+{% endfor %}	
+
+{% endblock %}{# end content block #}
