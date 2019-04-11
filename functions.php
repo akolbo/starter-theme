@@ -65,6 +65,43 @@ class StarterSite extends Timber\Site {
 		$context['notes'] = 'These values are available everytime you call Timber::context();';
 		$context['menu'] = new Timber\Menu();
 		$context['site'] = $this;
+
+	
+	
+	
+	
+		/** CUSTOM contexts go here */
+
+		/**  Site Logo */
+
+			/* WordPress Variables  */
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' );
+			$custom_logo_url_src = wp_get_attachment_image_src( 'custom_logo_src' );
+
+			/* Corresponding Twig Handles for WP Variables (above) */
+			$context['custom_logo_id'] = $custom_logo_id;
+			$context['custom_logo_url'] = $custom_logo_url;
+			$context['custom_logo_url_src'] = $custom_logo_url_src;
+			/* Here in order to use the twig handle {{custom_logo}} in .twig files in the form of 
+			*  alt="{{ Image(custom_logo).alt }}" 
+			*  Otherwise, use {{custom_logo_id}} and {{custom_logo_url}} for use with 
+			webp images and sourceset the handles below  
+			*/
+			$context['custom_logo'] = get_custom_logo();
+		
+			
+		/** Custom Post Type Context Support */
+
+			/* Add the property to the array called 'clients'.  
+			* Inside the array parenthesis you can use the standard type of query that you'd send to 
+			* wp_query or WordPress' own get_posts function
+			*/
+			$context['clients'] = Timber::get_posts(array('post_type' => 'client'));
+			$context['services'] = Timber::get_posts(array('post_type' => 'service'));
+		
+
+
 		return $context;
 	}
 
@@ -118,6 +155,74 @@ class StarterSite extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
+
+		/*
+		* Enable support for Custom Logo.
+		*
+		* See: https://developer.wordpress.org/themes/functionality/custom-logo/
+		*/
+		add_theme_support( 'custom-logo' );
+
+		/*
+		* This Allows us to add #asyncload to the end of the javascript script path so that it loads asyncroneosly. Notes below by AK
+		See: https://stackoverflow.com/questions/18944027/how-do-i-defer-or-async-this-wordpress-javascript-snippet-to-load-lastly-for-fas
+		And: https://matthewhorne.me/defer-async-wordpress-scripts/
+		*/
+
+		/*
+		* First, enqueue the scripts
+		*/
+		function my_assets() {
+			//wp_enqueue_style( 'theme-style', get_stylesheet_uri(), array( 'reset' ) );
+			//wp_enqueue_style( 'reset', get_stylesheet_directory_uri() . '/reset.css' );							
+			wp_enqueue_style( 'minified-css', get_stylesheet_directory_uri() . '/style.css');
+			wp_enqueue_style( 'fonts', get_stylesheet_directory_uri() . '/fonts_css/fonts.css');
+
+			wp_enqueue_script( 'minified-javascript', get_stylesheet_directory_uri() . '/scripts.min.js','',2,true );
+			// Lazyload - Class .lazy is defined in in custom.js
+			wp_enqueue_script( 'lazyload', 'https://cdn.jsdelivr.net/npm/vanilla-lazyload@11.0.5/dist/lazyload.min.js','',2,true ); 
+			wp_enqueue_script( 'require', 'https://cdn.jsdelivr.net/npm/requirejs@2.3.6/bin/r.min.js','',2,true ); 
+		}
+
+
+	/*
+	* Second, add the handle to either the defer or async function below. In this case the handle = minified-javascript
+	*/
+		function add_defer_attribute($tag, $handle) {
+			// add script handles to the array below
+			$scripts_to_defer = array('my_handle_goes_here'); //<---replace 'my-js-handle' with the handle inside wp_enqueue_script. Add multiple handles separated by commas
+			
+			foreach($scripts_to_defer as $defer_script) {
+			   if ($defer_script === $handle) {
+				  return str_replace(' src', ' defer="defer" src', $tag);
+			   }
+			}
+			return $tag;
+		 }			 		
+					
+		function add_async_attribute($tag, $handle) {
+			// add script handles to the array below
+			$scripts_to_async = array(['minified-css','fonts','minified-javascript','lazyload','require']); //<---replace 'my-js-handle' with the handle inside wp_enqueue_script. Add multiple handles separated by commas
+			
+			foreach($scripts_to_async as $async_script) {
+			   if ($async_script === $handle) {
+				  return str_replace(' src', ' async="async" src', $tag);
+			   }
+			}
+			return $tag;
+		 }
+
+	/*
+	* Third, run 'async' or 'defer' filters (or both)
+	*/			 
+		 add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+		 add_filter('script_loader_tag', 'add_defer_attribute', 10, 2);	
+	
+	 /*
+	* Fourth, add action that runs the filtered enqueued script
+	*/
+		 add_action( 'wp_enqueue_scripts', 'my_assets' );		
+
 	}
 
 	/** This Would return 'foo bar!'.
