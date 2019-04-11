@@ -36,8 +36,7 @@
     "gulp-fontello": "^0.5.1",
     "gulp-flatten": "^0.4.0",
     "gulp-favicons": "^2.3.0",
-    "gulp-gzip": "^1.1.2",
-    "gulp-if": "^2.02"
+    "gulp-gzip": "^1.1.2"
   },
   "dependencies": {
     "bootstrap": "^4.3.1"
