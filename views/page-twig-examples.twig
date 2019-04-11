@@ -28,6 +28,15 @@
 
 <h2>Custom Post Type - Image with Letterbox</h2>
 <img src="{{ Image(client.client_logo).src|letterbox(400, 400, '#333') }}" />
-{% endfor %}	
+{% endfor %}
+
+
+<!-- For Youtube Shortcode -->
+<h2>Youtube Shortcode</h2>
+
+{% if youtube_id %}
+<iframe width="560" height="315" src="//www.youtube.com/embed/{{ youtube_id }}" frameborder="0" allowfullscreen></iframe>
+{% endif %}
+
 
 {% endblock %}{# end content block #}

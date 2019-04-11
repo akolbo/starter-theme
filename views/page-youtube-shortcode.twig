@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <div class="container padding-y padding-lg">
+        <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+            
+                <h1 class="title title--xs">{{post.title}}</h1>
+                
+        
+        </article>
+    </div><!-- /content-wrapper -->
+    
+    <!-- For Youtube Shortcode -->
+    {% if youtube_id %}
+    <iframe width="560" height="315" src="//www.youtube.com/embed/{{ youtube_id }}" frameborder="0" allowfullscreen></iframe>
+    {% endif %}
+
+
+{% endblock %}{# end content block #}

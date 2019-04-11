@@ -221,7 +221,26 @@ class StarterSite extends Timber\Site {
 	 /*
 	* Fourth, add action that runs the filtered enqueued script
 	*/
-		 add_action( 'wp_enqueue_scripts', 'my_assets' );		
+		 add_action( 'wp_enqueue_scripts', 'my_assets' );	
+		 
+	
+	
+	
+    // /** Youtube Shortcode
+	// * See page-youtube-shortcode.twig
+	// * Should be called from within an init action hook
+	// */		
+	// add_shortcode( 'youtube', 'youtube_shortcode' );
+	// function youtube_shortcode( $atts ) {
+	// 	if( isset( $atts['id'] ) ) {
+	// 		$id = sanitize_text_field( $atts['id'] );
+	// 	} else {
+	// 		$id = false;
+	// 	}
+	// 	// This time we use Timber::compile since shortcodes should return the code
+	// 	return Timber::compile( 'youtube-short.twig', array( 'id' => $id ) );
+	// }// end Youtube Shortcode Function
+		 
 
 	}
 
