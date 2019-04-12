@@ -1,0 +1,24 @@
+// Ratio Hack --- Padding Bottom Hack Illustrated by Alex Carpentar
+// https://www.youtube.com/watch?v=iSaBRUgAXnk
+
+img {
+    width: 100%;
+  }
+  .ratio-16-9 {
+    position: relative;
+    display: block;
+  }
+  .ratio-16-9:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: red;
+  }
+  .ratio-16-9__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }

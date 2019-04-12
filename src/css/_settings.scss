@@ -1,0 +1,69 @@
+// ==========================================================================
+// Crystal Theme - Settings
+// A Tent CSS design theme.
+// ==========================================================================
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+// quaternary, quinary, senary, septenary, octonary, nonary, and denary,
+
+$color-primary:   #3E4650; //slate grey
+$color-primary-dark:   darken( $color-primary, 15% ); //slate grey
+$color-secondary:  #BAA758; // gold
+$color-tertiary:   #E8BC52;  //yellow
+
+$color-quaternary:   #252C34;
+$color-quinary:   pink;
+$color-senary:   purple;
+$color-septenary:   turquoise;
+$color-octonary:   yellow;
+$color-nonary:   green;
+$color-denary:   violet;
+
+$color-lightest:   	  #FFFFFF;
+$color-lighter:    		#F2F2F2;
+$color-light:      		#E0E0E0;
+$color-medium:     		#A4A4A4;
+$color-dark:       		#6E6E6E;
+$color-darker:     		#444444;
+$color-darkest:    		#111111;
+
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+
+
+// Font Sizes
+//$size-xxxs: 10px !default;
+//$size-xxs: 12px !default;
+//$size-xs: 14px !default;
+//$size-sm: 16px !default;
+//$size-md: 18px !default;
+$size-lg: 24px;
+//$size-xl: 32px !default;
+//$size-xxl: 40px !default;
+//$size-xxxl: 48px !default;
+
+
+// ==========================================================================
+// Standalone Typography Modifiers
+// ==========================================================================
+
+$type-normal: 300;
+
+
+
+
+
+.color {
+    &-primary-dark      { color:   $color-primary-dark }
+    
+}
+
+.bg-color {
+    &-primary-dark      { background-color:   $color-primary-dark }
+}

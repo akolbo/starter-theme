@@ -1,0 +1,64 @@
+// Combination Breakpoint and Sass Mixins and Variables
+// ====
+
+
+/*-----------------------------------------------------------------------------*/
+/* Grid - Width Variables                       
+/*-----------------------------------------------------------------------------*/
+/*
+Variable:       Value:                      */
+$w--zo:		        0px;
+$w--xs:			      640px;
+$w--sm: 		      750px;
+$w--md: 		      860px;
+$w--lg: 		      970px;
+$w--xl: 		      1080px;
+$w--2xl: 		      1190px;
+$w--3xl: 		      1300px;
+$w--4xl: 		      1410px;
+$w--5xl: 		      1520px;
+$w--6xl: 		      1630px;
+$w--7xl: 		      1740px;
+$w--8xl: 		      1850px;
+$w--infinity:	      9999px;
+
+/*-----------------------------------------------------------------------------*/
+/* Grid - Width Ranges                       
+/*-----------------------------------------------------------------------------*/
+/*
+Variable:         From:  To:                    */
+$w--zo-xs:        $w--zo ($w--xs - 1);
+$w--xs-sm:        $w--xs ($w--sm - 1);
+$w--sm-md:        $w--sm ($w--md - 1);
+$w--md-lg:        $w--md ($w--lg - 1);
+$w--lg-xl:        $w--lg ($w--xl - 1);
+$w--xl-inf:       $w--xl ($w--infinity - 1);
+
+
+/*-----------------------------------------------------------------------------*/
+/* Grid - Height Variables                       
+/*-----------------------------------------------------------------------------*/
+/*
+Variable:         Value:                      */
+$h--400:          (min-height 400px);
+$h--800:          (min-height 800px);
+$h--1200:         (min-height 1200px);
+$h--1600:         (min-height 1600px);
+$h--2000:         (min-height 2000px);
+$h--2400:         (min-height 2400px);
+$h--2800:         (min-height 2800px);
+$h--3200:         (min-height 3200px);
+
+
+/*-----------------------------------------------------------------------------*/
+/* Grid - Examples from Breakpoint Website (for Reference)                       
+/*-----------------------------------------------------------------------------*/
+
+// assume min-width (by default) if only a number
+$high-tide: 500px;
+// set min-width/max-width if both values are numbers
+$ex-presidents: 600px 800px;
+// if one value is a string, assume a feature/value pair
+$surfboard-width: max-width 1000px;
+// string tests together within parentheses, assume each item is a feature value pair
+$surfboard-height: (min-height 1000px) (orientation portrait);

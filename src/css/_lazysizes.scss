@@ -1,0 +1,78 @@
+// https://github.com/aFarkas/lazysizes/blob/gh-pages/README.md
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.imagecontainer {
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+
+}
+
+.imagecontainer:before {
+  display: block;
+  width: 100%;
+  content: "";
+  padding-bottom: 100%;
+  height: 0;
+}
+
+.imagecontainer-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  transition: 400ms transform;
+}
+
+.is-contain.imagecontainer .imagecontainer-img {
+  object-fit: contain;
+  font-family: "object-fit: contain";
+}
+
+.is-cover.imagecontainer .imagecontainer-img {
+  object-fit: cover;
+  font-family: "object-fit: cover";
+}
+
+
+section.hero-1 {
+	text-align: center; //center child div
+	
+	background-color: darken(#fff, 70%);
+
+  margin: 0 0 0 0;
+	@include breakpoint ($w--sm){ margin: 0 0 0 0; }
+	position: relative;
+
+	.slider-1,
+	.slide-1 {		
+		height: 260px;
+		@include breakpoint ($w--md){ height: 400px; }
+		@include breakpoint ($w--lg){ height: 600px; }
+	}	
+	
+	.hero-copy-1 {
+	
+		line-height: 1.1;
+		
+		color: white;
+		color: rgba(255,255,255,.85);		
+		display: inline-block; //fits to content
+	
+		position: absolute;
+		top: 50%;
+		left: 0;
+		margin-top: -2em;
+		text-align: center;
+		width: 100%;
+		z-index: 10000;
+	
+	}
+}

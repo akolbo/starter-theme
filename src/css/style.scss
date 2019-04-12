@@ -1,0 +1,36 @@
+/*!
+Theme Name: Timber Starter Theme KS
+Theme URI: https://wordpress.org/themes/twentyseventeen/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: WordPress theme based on Timber and built with TentCSS, Susy, Breakpoint and Runs on Gulp
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentyseventeen
+!*/
+
+/* Settings for Tent.css (must be before TentCSS to Override TentCSS defaults) */
+@import "settings";
+/* TentCSS */
+@import "vendor/tentcss/src/tent.scss";
+/* Susy */
+@import "vendor/susy3/sass/susy";
+/* Breakpoint Sass */
+@import "vendor/breakpoint-sass/stylesheets/breakpoint";
+/* Grid Breakpoints */
+@import "grid-breakpoints";
+/* Lazysizes Hacks */
+@import "lazysizes";
+/* Ratio Hack for Images by Alex Carpentar */
+@import "ratio-hack";
+/* Website Specific Settings */
+@import "website";
+
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 0,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+);

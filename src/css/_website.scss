@@ -1,0 +1,163 @@
+// Website Specific Settings
+// ====
+
+
+/*-----------------------------------------------------------------------------*/
+/* Background Color                      
+/*-----------------------------------------------------------------------------*/
+
+body {
+    background-color: $color-lighter;
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Headings                       
+/*-----------------------------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: greycliff;      
+}
+.heading-primary {    
+    font-weight: bold;
+    letter-spacing: 0rem;
+}
+
+.heading-secondary {    
+    font-weight: medium;
+    letter-spacing: 0rem;
+}
+
+.heading-tertiary {
+    font-weight: normal;      
+    letter-spacing: 0rem;    
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Page Headers                       
+/*-----------------------------------------------------------------------------*/
+
+.header-global {
+    background-color: $color-light;
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Page Footers                       
+/*-----------------------------------------------------------------------------*/
+
+.footer-global {
+    background-color: $color-secondary;
+}
+
+// Default Stacked Page Section margins
+.container {
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+/*-----------------------------------------------------------------------------*/
+/* Section Containers                       
+/*-----------------------------------------------------------------------------*/
+
+.container {
+    width: 100%;
+}
+
+.panel {
+    width: 100%;    
+    margin-left: auto;
+    margin-right: auto;    
+    //Max-width Breakpoints
+    @include breakpoint ($w--lg){ max-width: $w--lg; }
+    @include breakpoint ($w--3xl){ max-width: $w--3xl; }
+    @include breakpoint ($w--6xl){ max-width: $w--6xl; }        
+}
+
+.mktg-container{}
+.mktg-panel {}
+.mktg-panel--reverse {}
+
+
+
+/*-----------------------------------------------------------------------------*/
+/* Topbar                       
+/*-----------------------------------------------------------------------------*/
+
+.top-bar__call-to-action {
+    float: right;
+    a {
+        display: block;
+        padding: 6px 60px 12px 60px;
+        
+    }
+}
+
+.top-bar__call-to-action:first-child {
+    float: left;
+    margin-top: .7rem;
+    border: 0px;
+}
+
+
+/*-----------------------------------------------------------------------------*/
+/* Entry-cards                       
+/*-----------------------------------------------------------------------------*/
+
+.entry-card {
+    //width: span(12);
+    float: left;
+    padding: 1em;   
+    @include breakpoint ($w--md){
+        width: span(4);
+    }
+}
+
+.entry-card:nth-of-type(1) {
+    background-color: $color-primary;
+    .heading-secondary {
+        color: $color-medium;
+    }
+    .heading-primary {
+        color: $color-secondary;
+        font-size: 4rem;
+        text-align: left;
+    }
+    p {
+        color: $color-lightest;
+    }
+}
+
+.entry-card:nth-of-type(2) {
+    background-color: $color-lighter;
+    .heading-secondary {
+        color: $color-dark;
+    }
+    .heading-primary {
+        color: $color-secondary;
+        font-size: 4rem;
+        text-align: left;  
+    }
+    p {
+        color: $color-darker;
+    }
+}
+
+
+.entry-card:nth-of-type(3) {
+    background-color: $color-secondary;
+    .heading-secondary {
+        color: $color-lightest;        
+    }
+    .heading-primary {
+        color: $color-primary;
+        font-size: 4rem;
+        text-align: left;  
+    }
+    p {
+        color: $color-darkest;
+    }
+}
