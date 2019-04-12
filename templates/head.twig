@@ -1,0 +1,59 @@
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{ site.language_attributes }}> <![endif]-->
+<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
+<head>
+    <meta charset="{{ site.charset }}" />
+    <meta name="description" content="{{ site.description }}">
+    {#<link rel="stylesheet" href="{{theme.path}}/style.css" type="text/css" media="screen" />#}
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+    <link rel="author" href="{{theme.path}}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+    <link rel="profile" href="http://gmpg.org/xfn/11">    
+{#-- Custom Headers --#}
+
+{# -- Misc header tags -- #}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{#-- Favicons, Webapp Manifest, Browserconfig --#}
+
+    {# 
+    The following links are copied straight from the generated index.html file created by gulp-favicon.
+
+    Then we added in the theme path to the '/favicons' folder
+
+    To generate all of these favicons, place a 1024x1024 pixel png inside the /src/favicon folder and name it favicon.png.
+    #}
+<link rel="shortcut icon" href="{{theme.path}}/favicons/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="{{theme.path}}/favicons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{theme.path}}/favicons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="57x57" href="{{theme.path}}/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="{{theme.path}}/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="{{theme.path}}/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="{{theme.path}}/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="{{theme.path}}/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="{{theme.path}}/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="{{theme.path}}/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="{{theme.path}}/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="{{theme.path}}/favicons/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{theme.path}}/favicons/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="{{theme.path}}/favicons/apple-touch-icon-1024x1024.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Business Full Name"> {# <-- change-this!!! #}
+<link rel="icon" type="image/png" sizes="228x228" href="{{theme.path}}/favicons/coast-228x228.png">
+<meta name="msapplication-TileColor" content="#020307">
+<meta name="msapplication-TileImage" content="{{theme.path}}/favicons/mstile-144x144.png">
+<meta name="msapplication-config" content="{{theme.path}}/favicons/browserconfig.xml">
+<link rel="yandex-tableau-widget" href="{{theme.path}}/favicons/yandex-browser-manifest.json">
+
+{# Added in the 512x512 size to satisfy Google Lighthouse Audit #}
+<link rel="icon" type="image/png" sizes="512x512" href="{{theme.path}}/favicons/firefox_app_512x512.png">
+<link rel="manifest" href="{{theme.path}}/manifest.json">
+
+
+{# This was taken from the studio107 starter template #}
+<meta name="theme-color" content="#3E4650">{# <-- change-this!!! #} 
+
+{{ function('wp_head') }}
