@@ -1,22 +1,22 @@
-# Ignore only underscore files on the top level
+# Ignore underscored files and folders but only on the top level
 /_*
+
+# Ignore all _asset files everywhere
 _assets
 acf-json/*
 
 
 ### Project
-vendor
+/vendor
 node_modules
-vendor/
 composer.lock
 
 ### Website
-build
-favicons
-fonts
-fonts_css
+/build
+/favicons
+/fonts
+/fonts_css
 package-lock.json
-scripts.min.js
 
 
 ### 
