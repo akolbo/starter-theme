@@ -7,7 +7,7 @@ acf-json/*
 
 
 ### Project
-/vendor
+vendor
 node_modules
 composer.lock
 
