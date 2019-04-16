@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<div class="container">
+    <section class="panel">
+        <h1 class="">Homepage</h1>
+    </section>
+</div>
+
+<div class="container">
+    <section class="panel">
+        <h2 class="">Headings</h2>
+        <h1 class="heading-primary">Heading Primary</h1>
+        <h2 class="heading-secondary">Heading Secondary</h2>
+        <h3 class="heading-tertiary">Heading Tertiary</h3>
+    </section>
+</div>
+
+<div class="container">
+        <section class="panel">
+            <h2 class="">Typography</h2>
+            <p>{{dummy(300)|wpautop}}</p>
+        </section>
+    </div>
+
+{% endblock %}
