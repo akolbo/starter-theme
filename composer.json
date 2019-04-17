@@ -1,7 +1,7 @@
 {
     "name": "akolbo/timber-starter-theme-ks",
     "description": "Wordpress Theme built on top of Timber Starter Theme",
-    "type": "project",
+    "type": "wordpress-theme",
     "authors": [
         {
             "name": "Adam Kolbo",
