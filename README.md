@@ -1,4 +1,19 @@
 
+# Hierarchy
+
+- Page - Home | About | Clients | Services
+- Enclosure - Splash | Splash-Global | Header-Global | Footer-Global | Case-Study-Feature | Case-Study-Listings
+Options: 
+    - *-listings - a list of database posts or entries
+    - *-feature
+    - *-global
+    - *-feed - a group of informational pieces that come from outside sources
+- Container - a div that only declares max width
+- Panel
+
+
+
+
 # The Timber Starter Theme
 
 The "_s" for Timber: a dead-simple theme that you can build from. The primary purpose of this theme is to provide a file structure rather than a framework for markup or styles. Configure your Sass, scripts, and task runners however you would like!
