@@ -10,27 +10,43 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentyseventeen
 !*/
 
-/* Settings for Tent.css (must be before TentCSS to Override TentCSS defaults) */
-@import "settings";
-/* TentCSS */
-@import "vendor/tentcss/src/tent.scss";
-/* Susy */
-@import "vendor/susy3/sass/susy";
-/* Breakpoint Sass */
-@import "vendor/breakpoint-sass/stylesheets/breakpoint";
-/* Grid Breakpoints */
-@import "grid-breakpoints";
+/* Normalize */
+@import "resets/all";
+
+/* Susy | Breakpoint */
+@import "grid/all";
+
+@import "colors/all";
+
 /* Lazysizes Hacks */
 @import "lazysizes";
-/* Ratio Hack for Images by Alex Carpentar */
-@import "ratio-hack";
+
+@import "sections/all";
+
+@import "utilities/all";
+
+/* Typography */
+@import "typography/all";
+
 /* Website Specific Settings */
 @import "website";
 
 
-$susy: (
-  'columns': susy-repeat(12),
-  'gutters': 0,
-  'spread': 'narrow',
-  'container-spread': 'narrow',
-);
+
+
+/* If these HTML5 elements are display:block they create a gap that is non-removable
+So let's float them */
+section, article, footer, header, nav {
+  float: left;
+  width: 100%;
+}
+
+
+/* Universal Box Sizing with Inheritance */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+

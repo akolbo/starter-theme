@@ -1,0 +1,19 @@
+// This can apply to any section-type, content-type or unit-type
+.card {
+    padding: 1rem;	    
+	display: block;
+	
+	border-radius:  10px;	
+	
+	-webkit-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); 
+	
+	&:after {
+		content: "";
+		clear: both;
+	}
+
+	p { display: block;
+	clear: both;}	
+}

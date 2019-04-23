@@ -1,0 +1,39 @@
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 10px,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+);
+
+/* DEBUG - COMMENT OUT WHEN FINISHED */
+.container {
+    background: susy-svg-grid() no-repeat scroll !important; 
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Max-width Container                       
+/*-----------------------------------------------------------------------------*/
+
+.container {
+    width: 100%;    
+    margin-left: auto;
+    margin-right: auto;   
+    //Max-width Breakpoints
+    @include breakpoint ($w--sm){ max-width: $w--lg; }   
+}
+
+.snapping {  
+    //Max-width Breakpoints    
+    @include breakpoint ($w--xs){ max-width: $w--xs; }
+    @include breakpoint ($w--md){ max-width: $w--xs; }
+    @include breakpoint ($w--xl){ max-width: $w--md; }
+    @include breakpoint ($w--2xl){ max-width: $w--xl; }
+    @include breakpoint ($w--4xl){ max-width: $w--2xl; }
+    @include breakpoint ($w--6xl){ max-width: $w--4xl; }
+    @include breakpoint ($w--8xl){ max-width: $w--6xl; }    
+}
+
+.stretching {  
+    //Max-width Breakpoints    
+    @include breakpoint ($w--sm){ max-width: 100%; }    
+}

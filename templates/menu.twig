@@ -1,6 +1,8 @@
-<nav class="navigation">
-	<div class="navigation__container container">
-		<div class="navigation__logo">							
+<nav class="navigation-global">
+	<div class="container">
+
+
+		<div class="site-logo">							
 			<a class="" href="{{ site.url }}" rel="home">
 				<picture>        
 					{#	Supporting PICTURE in IE9 :
@@ -29,22 +31,20 @@
 	
 
 
-		<div class="navigation__menu">
-			<div class="main-navigation">
+		<div class="">
+			<div class="">
 						{% if menu %}
 						
-						<ul class="list list--inline margin-null type-right padding-y padding-xs">
+						<ul class="">
 							{% for item in menu %}
-								<li class="menu__item list__item {{ item.classes | join(' ') }}">
-									<a class="color-secondary title title--lg type-uppercase padding-xxs" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>		
+								<li class=" {{ item.classes | join(' ') }}">
+									<a class="" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>		
 								</li>
 							{% endfor %}
 							</ul>
 						
 						{% endif %}
-					
-				
-				
+									
 					{# <div class="hidden-lg">
 						<ul>
 							{% for slug, item in nav %}

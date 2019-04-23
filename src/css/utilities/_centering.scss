@@ -1,0 +1,10 @@
+/* Centering Parent: This 'WILL CENTER' it's first child--vertically */
+.child-is-centered-h {
+	position: relative;               		// Make the container relatively positioned, which declares it to be a container for absolutely positioned elements.
+	 p, div {	
+		margin: 0;
+		width: 100%;
+		position: absolute;					// Make the element itself absolutely positioned.
+		top: 50%;							// Place it halfway down the container with 'top: 50%'. (Note that 50%' here means 50% of the height of the container
+		transform: translate(0, -50%); }	// Use a translation to move the element up by half its own height. (The '50%' in 'translate(0, -50%)' refers to the height of the element itself
+}

@@ -2,26 +2,157 @@
 
 {% block content %}
 
-<div class="container">
-    <section class="panel">
-        <h1 class="">Homepage</h1>
-    </section>
-</div>
-
-<div class="container">
-    <section class="panel">
-        <h2 class="">Headings</h2>
-        <h1 class="heading-primary">Heading Primary</h1>
-        <h2 class="heading-secondary">Heading Secondary</h2>
-        <h3 class="heading-tertiary">Heading Tertiary</h3>
-    </section>
-</div>
-
-<div class="container">
-        <section class="panel">
-            <h2 class="">Typography</h2>
-            <p>{{dummy(300)|wpautop}}</p>
-        </section>
+<section class="enclosure splash_topic">
+    <div class="container">
+        <div class="panel">
+            <h1 class="heading-primary">This is the Splash Section</h1>
+        </div>
     </div>
+</section>
+
+<section class="enclosure snapping_topic">
+        <div class="container">
+            <div class="panel">
+                <h1 class="heading-primary">Snapping Container Section</h1>
+                <p>This section snaps to larger breakpoints as the width increases</p>
+                <p>Not recommended for articles, since a line is supposed to be between 7 and 12 words for max readability.</p>
+            </div>
+        </div>
+</section>
+
+<section class="enclosure stretching_topic">
+        <div class="container">
+            <div class="panel">
+                <h1 class="heading-primary">Stretching Container Edge-To-Edge</h1>
+                <p>This section snaps to larger breakpoints as the width increases</p>
+                <p>Not recommended for articles, since a line is supposed to be between 7 and 12 words for max readability.</p>
+            </div>
+        </div>
+</section>
+
+<section class="enclosure">
+    <div class="container">
+        <div class="panel">
+            <h1 class="heading-primary">Homepage</h1>
+        </div>
+    </div>
+</section>
+
+<section class="enclosure">
+    <div class="container">
+        <div class="panel">
+            <h2 class="">Headings</h2>
+            <h1 class="heading-primary">Heading Primary</h1>
+            <h2 class="heading-secondary">Heading Secondary</h2>
+            <h3 class="heading-tertiary">Heading Tertiary</h3>
+        </div>
+    </div>
+</section>
+
+<section class="enclosure all-day-savings_topic feature_type">
+    <div class="container">
+        <div class="panel">
+            <h2 class="heading-secondary">All Day Savings</h2>
+            <p>This is added in to illustrate the structure of a marketing panel. Add a specific class with the content heading and change colors etc. for that specific element</p>
+
+        </div>
+    </div>
+</section>
+
+<article class="enclosure">
+    <div class="container">
+            <div class="panel">
+                <h2 class="heading-secondary">Article</h2>
+                <p>{{dummy(200)}}</p>
+            </div>
+    </div>
+</article>
+
+<section class="enclosure case-study_topic feature_type">
+    <div class="container">
+        <h2 class="heading-secondary">Case Study Feature</h2>
+        <p>{{dummy(200)}}</p>
+    </div>
+</section>
+
+<section class="enclosure case-study_topic listings_type">
+    <div class="container">
+        <h2 class="heading-secondary">Case Study Listings</h2>
+        <p>{{dummy(200)}}</p>
+    </div>
+</section>
+
+<section class="enclosure trusting-clients_topic features_type">
+        <div class="container">
+            <h2 class="heading-secondary">Client Logo Features</h2>
+            <p>{{dummy(200)}}</p>
+        </div>
+</section>
+
+<section class="enclosure jobs_topic listings_type">
+        <div class="container">
+            <h2 class="heading-secondary">Job Listings</h2>
+            <p>{{dummy(200)}}</p>
+        </div>
+</section>
+
+<section class="enclosure press_topic listings_type">
+    <div class="container">
+        <h2 class="heading-secondary">Press Listings</h2>
+        <p>{{dummy(200)}}</p>
+    </div>
+</section>
+
+
+<section class="enclosure press_topic features_type">
+        <div class="container">
+            <h2 class="heading-secondary">Press Features</h2>          
+        </div>
+        <div class="container">                
+                <div class="twitter-quote field_type card">
+                        <p>{{dummy(15)}}</p>
+                </div>
+                <div class="twitter-quote field_type card">
+                        <p>{{dummy(15)}}</p>
+                </div>
+                <div class="twitter-quote field_type card">
+                        <p>{{dummy(15)}}</p>
+                </div>
+        </div>        
+</section>
+
+
+<section class="enclosure promo-video_topic features_type">
+        <div class="container">
+            <h2 class="heading-secondary">Youtube Embed</h2>          
+        </div>
+        <div class="container">                
+                <iframe width="854" height="480" 
+                src="https://www.youtube.com/embed/M7lc1UVf-VE" 
+                frameborder="0" allowfullscreen>
+              </iframe>
+        </div>        
+</section>
+
+
+
+<section class="enclosure semantic-html_topic collection_type">
+        <div class="container">
+            <h2 class="heading-secondary">Semantic HTML Element Reference</h2>          
+        </div>
+        <div class="container">                
+                <div class="twitter-quote_static">
+                    
+
+                </div>
+        </div>        
+</section>
+
+
+
+
+
+
+
 
 {% endblock %}

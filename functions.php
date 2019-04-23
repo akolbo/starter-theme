@@ -226,7 +226,8 @@ class StarterSite extends Timber\Site {
 	
 	
 	
-    // /** Youtube Shortcode
+	// /** Youtube Shortcode
+	// https://github.com/timber/timber/blob/master/docs/guides/wp-integration.md
 	// * See page-youtube-shortcode.twig
 	// * Should be called from within an init action hook
 	// */		

@@ -1,0 +1,48 @@
+/*-----------------------------------------------------------------------------*/
+/* Topics                    
+/*-----------------------------------------------------------------------------*/
+
+.enclosure {
+    background-color: $gradient-primary_fallback;
+    background-image: $gradient-primary;
+    
+    &.all-day-savings_topic {
+        background-color: rgba( indigo, .6 );
+        background-image: none;        
+    }
+    &.snapping_topic {
+        background-color: rgba( indigo, .6 );
+        background-image: none;
+        .container { @extend .snapping; }        
+    }
+    &.stretching_topic {
+        background-color: rgba( violet, .6 );
+        background-image: none;
+        .container { @extend .stretching; }      
+    }    
+
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Enclosure with Type                    
+/*-----------------------------------------------------------------------------*/
+.enclosure {
+    &.collection_type {        
+        background-color: rgba( red, .4 );
+        background-image: none;        
+    }
+    &.features_type {
+        background-color: rgba( orange, .4 );
+        background-image: none;
+    }
+    &.feed_type {
+        background-color: rgba( yellow, .4 );
+        background-image: none;
+    }
+    &.listings_type {
+        background-color: rgba( green, .4 );
+        background-image: none;
+    }
+}
+
+

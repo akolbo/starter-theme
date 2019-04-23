@@ -1,9 +1,4 @@
 // ==========================================================================
-// Crystal Theme - Settings
-// A Tent CSS design theme.
-// ==========================================================================
-
-// ==========================================================================
 // Colors
 // ==========================================================================
 
@@ -31,24 +26,20 @@ $color-darker:     		#444444 !default;
 $color-darkest:    		#111111 !default;
 
 // Every Other Element Change Background Color
+
 $gradient-primary: linear-gradient(#999, #fffbef) !default;
 $gradient-primary_fallback: #fffbef !default;
 
 
-// ==========================================================================
-// Typography
-// ==========================================================================
+// Linear Gradient    https://gist.github.com/ykhs/3690526
 
-
-
-// Font Sizes
-//$size-xxxs: 10px !default;
-//$size-xxs: 12px !default;
-//$size-xs: 14px !default;
-//$size-sm: 16px !default;
-//$size-md: 18px !default;
-$size-lg: 24px;
-//$size-xl: 32px !default;
-//$size-xxl: 40px !default;
-//$size-xxxl: 48px !default;
-
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
