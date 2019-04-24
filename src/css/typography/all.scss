@@ -2,5 +2,9 @@
 /* Typography                    
 /*-----------------------------------------------------------------------------*/
 
-/* Website Specific Settings */
-@import "headings";
+// /* Website Specific Settings */
+//@import "headings";
+
+/* Modular Scale - A list of values to size type and create a sense of harmony in a typography.
+   https://github.com/modularscale/modularscale-sass/releases/tag/v3.0.9 */
+@import "modular-scale";

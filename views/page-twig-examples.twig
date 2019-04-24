@@ -2,41 +2,56 @@
 
 {% block content %}
 
-<h1>Twig Examples</h1>
+<section class="enclosure">
+    <div class="container">
+        <div class="panel">
+            <h1 class="heading-primary"> <h1>{{title}}</h1></h1>                        
 
-<h2>Timber Sugar - Lorem Ipsum Dummy Text</h2>
-<p>{{dummy(500)|wpautop}}</p>
+            <h2>Timber Sugar - Lorem Ipsum Dummy Text</h2>
+            <p>{{dummy(200)|wpautop}}</p>
 
-<h2>Timber Sugar - Twitterify Lorem Ipsum Twitter Post</h2>
-{{tweet.content|twitterify}}
+            <h2>Timber Sugar - Twitterify Lorem Ipsum Twitter Post</h2>
+            {{tweet.content|twitterify}}
 
-<h2>Timber Sugar - Dummy Titles</h2>
-{% for posts in 0..9 %}
-    <h1>{{post.title|dummy(15)}}</h1>					
-{% endfor %}
+            <h2>For Posts in 0..3</h2>
+            {% for posts in 0..3 %}
+                <h3>{{post.title}}</h3>					
+            {% endfor %}
 
-<h2>Custom Post Type Title</h2>
-{% for client in clients %}
-    <h1>{{ client.title }}</h1>
-{% endfor %}
+            <h2>Timber Sugar - Dummy Titles (4 words long)</h2>
+            {% for posts in 0..3 %}
+                <h3>{{title|dummy(4)}}</h3>					
+            {% endfor %}
 
-<h2>Custom Post Type Content Fields</h2>
-{% for client in clients %}
+            <h2>Custom Post Type Title</h2>
+            {% for client in clients %}
+                <h1>{{ client.title }}</h1>
+            {% endfor %}
 
-<h2>Custom Post Type - Image</h2>
-<img src="{{ Image(client.client_logo).src }}" />
+            <h2>Custom Post Type Content Fields</h2>
+            {% for client in clients %}
 
-<h2>Custom Post Type - Image with Letterbox</h2>
-<img src="{{ Image(client.client_logo).src|letterbox(400, 400, '#333') }}" />
-{% endfor %}
+            <h2>Custom Post Type - Image</h2>
+            <img src="{{ Image(client.client_logo).src }}" />
+
+            <h2>Custom Post Type - Image with Letterbox</h2>
+            <img src="{{ Image(client.client_logo).src|letterbox(400, 400, '#333') }}" />
+            {% endfor %}
 
 
-<!-- For Youtube Shortcode -->
-<h2>Youtube Shortcode</h2>
+            <!-- For Youtube Shortcode -->
+            <h2>Youtube Shortcode</h2>
 
-{% if youtube_id %}
-<iframe width="560" height="315" src="//www.youtube.com/embed/{{ youtube_id }}" frameborder="0" allowfullscreen></iframe>
-{% endif %}
+            {% if youtube_id %}
+            <iframe width="560" height="315" src="//www.youtube.com/embed/{{ youtube_id }}" frameborder="0" allowfullscreen></iframe>
+            {% endif %}
+
+
+        </div>
+    </div>
+</section>
+
+
 
 
 {% endblock %}{# end content block #}

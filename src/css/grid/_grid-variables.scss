@@ -6,27 +6,27 @@
 /* Grid - Width Variables                       
 /*-----------------------------------------------------------------------------*/
 /*
-Variable:       Value:                      */
-$w--zo:		        0px;
+Variable:             Value:                                                  */
+$w--zo:		           0px;
 $w--xs:			      640px;
 $w--sm: 		      750px;
 $w--md: 		      860px;
 $w--lg: 		      970px;
-$w--xl: 		      1080px;
-$w--2xl: 		      1190px;
-$w--3xl: 		      1300px;
-$w--4xl: 		      1410px;
-$w--5xl: 		      1520px;
-$w--6xl: 		      1630px;
-$w--7xl: 		      1740px;
-$w--8xl: 		      1850px;
-$w--infinity:	      9999px;
+$w--xl: 		     1080px;
+$w--2xl: 		     1190px;
+$w--3xl: 		     1300px;
+$w--4xl: 		     1410px;
+$w--5xl: 		     1520px;
+$w--6xl: 		     1630px;
+$w--7xl: 		     1740px;
+$w--8xl: 		     1850px;
+$w--infinity:	     9999px;
 
 /*-----------------------------------------------------------------------------*/
 /* Grid - Width Ranges                       
 /*-----------------------------------------------------------------------------*/
 /*
-Variable:         From:  To:                    */
+Variable:         From:  To:                                                    */
 $w--zo-xs:        $w--zo ($w--xs - 1);
 $w--xs-sm:        $w--xs ($w--sm - 1);
 $w--sm-md:        $w--sm ($w--md - 1);

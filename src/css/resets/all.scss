@@ -1,2 +1,27 @@
 /* Normalize */
 @import "vendor/normalizev8.0.1";
+
+/*-----------------------------------------------------------------------------*/
+/* Background Color                      
+/*-----------------------------------------------------------------------------*/
+
+/* Universal Box Sizing with Inheritance */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {   
+    margin: 0;
+}
+
+/* If these HTML5 elements are display:block they create a gap that is non-removable
+So let's float them */
+section, article, footer, header, nav {
+    float: left;
+    width: 100%;
+}
+  
+  

@@ -1,0 +1,11 @@
+@import "vendor/susy3/sass/susy";
+/* Susy Grid Plugin for debugging - unprefixed */
+@import 'vendor/susy3/sass/plugins/svg-grid';
+
+$susy: (
+  'columns': susy-repeat(12),
+  'gutters': 10px,
+  'spread': 'narrow',
+  'container-spread': 'narrow',
+  'svg-grid-colors': 'rgba(0,0,0,.03)',
+);

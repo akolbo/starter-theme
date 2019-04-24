@@ -1,10 +1,3 @@
-$susy: (
-  'columns': susy-repeat(12),
-  'gutters': 10px,
-  'spread': 'narrow',
-  'container-spread': 'narrow',
-);
-
 /* DEBUG - COMMENT OUT WHEN FINISHED */
 .container {
     background: susy-svg-grid() no-repeat scroll !important; 
@@ -19,7 +12,7 @@ $susy: (
     margin-left: auto;
     margin-right: auto;   
     //Max-width Breakpoints
-    @include breakpoint ($w--sm){ max-width: $w--lg; }   
+    @include breakpoint ($w--sm){ max-width: $w--sm; }
 }
 
 .snapping {  

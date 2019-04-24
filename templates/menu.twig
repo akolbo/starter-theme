@@ -1,9 +1,9 @@
 <nav class="navigation-global">
 	<div class="container">
 
-
+		{% if custom_logo %}
 		<div class="site-logo">							
-			<a class="" href="{{ site.url }}" rel="home">
+			<a class="" href="{{ site.url }}" rel="home" aria-label="Link to the home page">
 				<picture>        
 					{#	Supporting PICTURE in IE9 :
 					While most versions of IE (even older ones!) are supported well, IE9 has a little conflict to work around. To support IE9, you will need to wrap a video element wrapper around the source elements in your picture tag. You can do this using conditional comments, like so...leave the html comments #}				
@@ -27,7 +27,13 @@
 				</picture><!--end logo picture-->
 			</a><!--end logo link-->
 		</div>
+		{% else %}
 
+		<h1 class="heading-primary">
+			<a class="" href="{{site.url}}" rel="home">{{site.name}}</a>
+		</h1>
+
+		{% endif %}
 	
 
 

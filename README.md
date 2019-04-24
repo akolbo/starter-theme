@@ -1,5 +1,15 @@
 ## Notes
 
+## Overall Methodology
+### Separation of Content: 
+1. Naming convention through content types
+1. database retrieval methods; 
+2. Style utilities are created separately and applied through `@extend` property within css. 
+
+### 
+
+
+
 ## Quick Note on Permalinks...
 Make sure you change the Permalink structure under Settings, or the "views" pages will not be visible unless you visit mysite.com/index.php/custom-page.
 
@@ -8,37 +18,44 @@ Then you need to create a page in the WP dashboard in order for the page to show
 
 ## Class Hierarchy
 
-Taken from bk.com, GetPocket.com, ikea.com, clearleft.com, vaersaagod.no, advancedcustomfields.com
+Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft.com, vaersaagod.no, advancedcustomfields.com, cypress.io/
 
 ## Page (Index) Classes 
 Home | About | Clients | Services | Manual 
 
 ## Enclosure Topics (AKA Tables in a Database)
-Splash | Splash_Global | Header_Global | Footer_Global | Case-Study(s)_Feature | Case-Study(s)-Listings | Services | Membership(s) | Process(s) | Value(s) | Testimonial(s) | Created-With | Compatibility | How-To | Supporters | Act/Get-Started | Options | Blog | Subscribe | Social Media | Contact | Sponsors(latest,platinum,gold,silver,bronze,backers) | Steps | Contribute | Vote | Comparison | Search | Lifestyle | Disclosure | Full-Disclosure | Access | Discover | Promotion(s)/Offer(s) | Delivery | New-Product(s) | Work/Project(s) | Project-Archive | Project-Current | Project-Notable | Notable-Mention(s) | Award_Listings | Structure() | Partnership | Organization-Structure | Cloud-Structure/Event-Structure | Biography | Admission | Evaluation | The-Competition | Guests | Career_listings | Career_overview | Goals | Purpose | News/Press | Trusting-Client/Client/Trusted-by | Advertising | Twitter_feed | Twitter_feature | Blog_Listings | Conference(s) |
+Splash | Splash_Global | Header_Global | Footer_Global | Case-Study(s)_Feature | Case-Study(s)-Listings | Services | Membership(s) | Process(s) | Value(s) | Testimonial(s) | Created-With | Compatibility | How-To | Supporters | Act/Get-Started | Options | Blog | Subscribe | Social Media | Contact | Sponsors(latest,platinum,gold,silver,bronze,backers) | Steps | Contribute | Vote | Comparison | Search | Lifestyle | Disclosure | Full-Disclosure | Access | Discover | Promotion(s)/Offer(s) | Delivery | New-Product(s) | Work/Project(s) | Project-Archive | Project-Current | Project-Notable | Notable-Mention(s) | Award_Listings | Structure() | Partnership | Organization-Structure | Cloud-Structure/Event-Structure | Biography | Admission | Evaluation | The-Competition | Guests | Career_listings | Career_overview | Goals | Purpose | News/Press | Trusting-Client/Client/Trusted-by | Advertising | Twitter_feed | Twitter_feature | Blog_Listings | Conference(s) | To-Do | On-Boarding | White-Labeling | Premium Integrations | 
 
 ### Topic Functional Types
 Describes how it's pulled from the database. 
 How the element(s) within a topic are iterated over or hard coded.
 
 
-### Plural-Groupings/Collections
-1. class-name_collection
+### Plural-Groupings/Collections Classes (always written after the Topic)
+1. class-name collection
 Most common section name might be *.feature_collection*. A group or collection of elements, probably of different types. So the section may contain multiple features like "Self-Driving, Costs Nothing, Prepares Your Taxes". Usually these would come in a group of 3.
-1. class-name_listings
+1. class-name listings
 A list of posts or entries that are pulled from the database as a for-loop in an alphabetical, newest/oldest, etc. + number of entries. 
-1. class-name_feed
+1. class-name feed
 A group of informational pieces that come from outside sources such as twitter or instagram posts, or api. 
-1. class-name_features - Includes an option within a post or entry with a "on/off" state one piece of featured or starred item (ex. case-study_feature)
+1. class-name features - Includes an option within a post or entry with a "on/off" state one piece of featured or starred item (ex. case-study_feature)
 
-## Page Specific Enclosure Topics
-1. class-name_global (think footer, header, logo copywrite, anything found on all or most pages)
-1. class-name_base (another word for global...think footer, header, logo copywrite, anything found on all or most pages)
+## Page Specific Enclosure Topics Based on the Template Name
+(another word for global...think footer, header, logo copyright, anything found on all or most pages)
+1. [footer] global
+1. [footer] base 
+1. [footer] page
+1. [footer] home - found only on the homepage
+1. [footer] blog
+1. [footer] entry - CraftCMS naming convention found on all entry pages
+1. [footer] entry - found on all 
+
 
 ## Singular Topic Units
-1. class-name_listing - each in a list of database posts or entries. They mirror the database in alphabetical, newest/oldest, etc. + number of entries. 
-1. class-name_feature - one piece of featured or starred item (ex. case-study_feature)
-1. class-name_field - a one-off probably "custom" field found on a specific page. 
-1. class-name_static - hardcoded piece of html. Not included in the database.
+1. class-name listing - each in a list of database posts or entries. They mirror the database in alphabetical, newest/oldest, etc. + number of entries. 
+1. class-name feature - one piece of featured or starred item (ex. case-study_feature)
+1. class-name field - a one-off probably "custom" field found on a specific page. 
+1. class-name static - hardcoded piece of html. Not included in the database.
 
 
 ## Tag Class Functions/Purpose
@@ -49,8 +66,10 @@ A group of informational pieces that come from outside sources such as twitter o
 3. Panel - Also thought of as a content panel. Includes visual aids, text, and headings. Can have multiple panels inside a container.
 
 ## Fields 
-1. text-field
-1. 
+1. text field
+1. text-area field
+1. checkbox field
+1. link field
 
 ## Images
 1. Visual Aid
@@ -61,11 +80,32 @@ A group of informational pieces that come from outside sources such as twitter o
 3. Motifs
 
 ## Types of Design Pieces
-1. Utilities (Navigation, Search, Cart, Sign-In, Access)
-2. Descriptives (Jon's hair is brown)
-3. Subjectives
-4. Directives (Do this...vote,contribute)
+1. Utilities
+(Navigation, Search, Cart, User Sign-In, Forms, Access Signin )
+2. Descriptive Topics
+Things that are quantifiable. Client list (also a good credibility builder). 
+(ex. We *are/have/do/make* this | Jon's hair *is* brown. Our supporters *are* the following companies. We *have* many lamps | These companies *are* already testing better with Cypress )
+3. Subjective Topics 
+(ex. Our services are done *better*. We make the *smoothest* smoothies. *Made* for people like you, shopping *made easy*. )
+4. Directive Topics
+(ex. You should *do* this | *Do* vote | *Do* contribute | *support* our cause | *become* one of us | *contact* us | *test* your code, not your patience | *Read* our Docs | *Chat* with Us | *Contribute* to ... | Do you love us? *Say* it!)
 5. Visual Motifs (Can be structural such as a div box, an absolutely positioned div, large svg, etc.)
+
+## Compare/Contrast Headlines
+1. *A broader thing has done something, finally this has done that too* - The web has evolved. Finally, testing has too.
+2. *Do this, Not That* - Test your code, not your patience.
+3. *What sets us apart?*
+1. *The thing has been doing something for too long, we've figured out how to fix it*
+1. *We do not use artificial something*
+1. *We focus on something and do it well*
+1. *We are compatible with something*
+1. *We are written in the best language*
+1. *We do something faster*
+1. *Our product is for*
+1. *This is a new way of doing something*
+1. *You can save time by doing something*
+1. 
+
 
 A Page is like a series of essays.
 See How to Choose a Win-Win Essay Topic 
@@ -121,7 +161,7 @@ In a persuasive essay, you are asked to argue an opinion or point of view
 14. Tag
 15. Skid
 16. Bar
-17. 
+17. Mobile Nav Dimmer
 
 
 

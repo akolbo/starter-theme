@@ -30,23 +30,3 @@ Text Domain: twentyseventeen
 
 /* Website Specific Settings */
 @import "website";
-
-
-
-
-/* If these HTML5 elements are display:block they create a gap that is non-removable
-So let's float them */
-section, article, footer, header, nav {
-  float: left;
-  width: 100%;
-}
-
-
-/* Universal Box Sizing with Inheritance */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-

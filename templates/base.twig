@@ -7,30 +7,30 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-
 		<div class="enclosure skip">
-			<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+			<div class="container">
+				<div class="panel">					
+					<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+				</div>
+			</div>					
 		</div>
 
-		<header class="enclosure header-global" >
+		<header class="enclosure header-global" role="banner">
 			{% block header %}
-				<div class="panel">
-
-					<h1 class="" role="">
-						<a class="" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					
-					<!-- nav -->
-					{% include "menu.twig" with {'menu': menu.get_items} %}
-					<!--/nav -->
-					
+				<div class="container">
+					<div class="panel">
+											
+						<!-- nav -->
+						{% include "menu.twig" with {'menu': menu.get_items} %}
+						<!--/nav -->
+						
+					</div>
 				</div>
-			{% endblock %}
-			{% include "menu.twig" with {'menu': menu.get_items} %}
+			{% endblock %}			
 		</header>
 		
-
-		<main>
+		{# This is the main content. When the "skip-content" button is clicked on assistive technology devices, they will jump to the #content section right here #}
+		<main id="content" tabindex="-1" role="main">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<!-- <div class="{{sidebar_class}}"> -->
 				{% block content %}

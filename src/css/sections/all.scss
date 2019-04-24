@@ -2,47 +2,96 @@
 /* Topics                    
 /*-----------------------------------------------------------------------------*/
 
+/* Page Class Targets */
+
+body {
+    &.home {
+        background-color: rgba( green, .1 );
+        background-image: none;            
+    }
+    &.page {
+        background-color: rgba( pink, .3 );
+        background-image: none;            
+    }
+}
+
+
+/* Topic Class Targets */
+
 .enclosure {
-    background-color: $gradient-primary_fallback;
-    background-image: $gradient-primary;
     
     &.all-day-savings_topic {
-        background-color: rgba( indigo, .6 );
+        background-color: rgba( blue, .1 );
         background-image: none;        
     }
     &.snapping_topic {
-        background-color: rgba( indigo, .6 );
+        background-color: rgba( yellow, .1 );
         background-image: none;
         .container { @extend .snapping; }        
     }
     &.stretching_topic {
-        background-color: rgba( violet, .6 );
+        background-color: rgba( red, .1 );
         background-image: none;
         .container { @extend .stretching; }      
     }    
 
 }
 
-/*-----------------------------------------------------------------------------*/
-/* Enclosure with Type                    
-/*-----------------------------------------------------------------------------*/
+/* Pull-Type Class Targets */
+
 .enclosure {
     &.collection_type {        
-        background-color: rgba( red, .4 );
+        background-color: rgba( red, .2 );
         background-image: none;        
     }
     &.features_type {
-        background-color: rgba( orange, .4 );
+        background-color: rgba( orange, .2 );
         background-image: none;
     }
     &.feed_type {
-        background-color: rgba( yellow, .4 );
+        background-color: rgba( yellow, .2 );
         background-image: none;
     }
     &.listings_type {
-        background-color: rgba( green, .4 );
+        background-color: rgba( green, .2 );
         background-image: none;
     }
+}
+
+
+/*-----------------------------------------------------------------------------*/
+/* Page Headers                       
+/*-----------------------------------------------------------------------------*/
+
+.header-global {
+    background-color: $color-primary;
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Page Footers                       
+/*-----------------------------------------------------------------------------*/
+
+.footer-global {
+    background-color: $color-secondary;
+}
+
+/*-----------------------------------------------------------------------------*/
+/* Topbar                       
+/*-----------------------------------------------------------------------------*/
+
+.top-bar__call-to-action {
+    float: right;
+    a {
+        display: block;
+        padding: 6px 60px 12px 60px;
+        
+    }
+}
+
+.top-bar__call-to-action:first-child {
+    float: left;
+    margin-top: .7rem;
+    border: 0px;
 }
 
 

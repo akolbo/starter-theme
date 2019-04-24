@@ -1,10 +1,6 @@
-/* Susy */
-@import "vendor/susy3/sass/susy";
-/* Susy Grid Plugin for debugging - unprefixed */
-@import 'vendor/susy3/sass/plugins/svg-grid';
+/* Susy3 */
+@import "susy3";
 /* Breakpoint Sass */
-@import "vendor/breakpoint-sass/stylesheets/breakpoint";
+@import "breakpoint";
 /* Grid Breakpoints */
-@import "grid-breakpoints";
-
-@import "settings";
+@import "grid-variables";
