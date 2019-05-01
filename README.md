@@ -4,7 +4,7 @@
 
 ## Context Levels
 1. Global - HTML/Global/Base/Index
-2. View - Body/Template/Page/Landing/Product/Blog/Home/Single/About/Clients/Services/Manual
+2. View - Body/Template/Page/Single/Entry/Post/Home/About/Landing/Product/Blog/Client/Service/Recipe
 3. Region - Header/Main/Aside/Footer
 4. Section - Topic/Collection/Feed/Listings/Category
 5. Unit - Entry/Property/Product/Listing
@@ -66,15 +66,14 @@ Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft
 
 
 
-
-
-## Home Section Purpose Level - Same hierarchy as a Region. Think of these as 'table name in a database', 'marketing point'
+## Page Section Purpose Level - Same hierarchy as a Region. Think of these as 'table name in a database', 'marketing point'
 
 1. .splash-area
 1. .splash
-1. .global .header
+1. .global .shrink-header
+1. .global .hamburger-header
 1. .global .footer
-1. .case-study.features
+1. .case-study.feature-set
 1. .case-study.listings
 1. .services.collection
 1. .company-process.marketing
@@ -85,59 +84,64 @@ Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft
 1. .how-to.topic
 1. .membership.topic
 1. .step-by-step-guide.topic
-1. .supporters.topic
-1. .sponsors.
+1. .our-supporters.topic
+1. .our-sponsors.channel
     2. .latest.level
-    2. .platinum
-    2. .gold
-    2. .silver
-    2. .bronze
-    2. .backers
-Act/Get-Started
-Options
-Blog
-Subscribe
-Social Media
-Contact
-
-Steps
-Contribute
-Vote
-Comparison
-Search
-Lifestyle
-Disclosure
-Full-Disclosure
-Access
-Discover
-Promotion(s)/Offer(s)
-Delivery
-New-Product(s)
-Work/Project(s)
-Project-Archive 
-Project-Current
-Project-Notable
-Notable-Mention(s)
-Award_Listings
-Structure()
-Partnership
-Organization-Structure
-Cloud-Structure/Event-Structure
-Biography
-Admission
-Evaluation
-The-Competition
+    2. .platinum.level
+    2. .gold.level
+    2. .silver.level
+    2. .bronze.level
+    2. .backers.level
+1. .trending-now - ex. Merriam-Webster.com
+1. .act-now
+1. .get-started
+1. .purchase-options
+1. .blog
+1. .subscribe
+1. .social Media
+1. .contact
+1. .steps
+1. .contribute
+1. .vote
+1. .comparison
+1. .search
+1. .lifestyle
+1. .disclosure
+1. .full-disclosure
+1. .access
+1. .discover
+1. .promotion.feature-set
+1. .offer.feature-set
+1. .delivery-service.overview
+1. .construction-service.overview
+1. .white-labeling-service.overview
+1. .new-product.listings
+1. .our-work
+1. .our-projects
+1. .project-archive 
+1. .project-current
+1. .project-notable
+1. .notable-mention(s)
+1. .award.listings
+1. .structure()
+1. .partnership
+1. .organization-structure
+1. .cloud-Structure/Event-Structure
+1. .biography
+1. .admission
+1. .evaluation
+1. .the-competition
 1. .guests-attending.feature-set
 1. .job.listings
 1. .career.listings
 1. .career.overview
-1. .goals
-1. .purpose
-1. .news
-1. .press
-1. .trusting-clients
-1. .client
-1. .trusted-by
+1. .goals.marketing
+1. .purpose.overview
+1. .news.listings
+1. .press.listings
+1. .trusting-clients.feature-set
+1. .client.feature-set
+1. .trusted-by.feature-set
 1. .advertising
 1. .twitter.feed
 1. .twitter.feature
@@ -145,7 +149,6 @@ The-Competition
 1. .conference.listings
 1. .to-do
 1. .on-boarding
-1. .white-labeling
 1. .premium-integrations
 
 ## Page Purpose Level (Product Page, Service Page, etc.)
@@ -160,16 +163,16 @@ The-Competition
 Describes how it's pulled from the database. 
 How the element(s) within a topic are iterated over or hard coded.
 
+### Motif Level - Div or Element that has no structural or content purpose, it's only there for style purposes.
+1. .motif
+1. .style
+
 ### Plural-Groupings/Collections Classes (always written after the Topic)
 1. .class-name.collection
-- Is a parent of a curated list of entries/posts. Singular class names precedes, such as *.business-objective* not *.business-objectives*. Including *.collection* perfects the plural nature of the elements children.
+- Is a parent of a curated list of entries/posts.
 - Most common class combo might be *.feature.collection*, *.business-objective.collection*, *.career-benefit.collection* .
-- The *collection* may contain multiple related or unrelated features like "Self-Driving, Costs Nothing, Prepares Your Taxes, Third Thursays and Weekends Off". 
+- The *collection* may contain multiple related or unrelated features like "Self-Driving, Costs Nothing, Prepares Your Taxes, Third Thursdays and Weekends Off". 
 - Usually these would come in a group of 3, but not necessarily.
-
-1. .class-name .set
-- Prefer the class *.collection* as *.set* is too vague. 
-- References a selection all of the same type. 
 
 1. .class-name.listings
 - The parent class of a list of entries/posts that are pulled from the database as a for-loop in an alphabetical, newest/oldest, etc. + number of entries. 
@@ -185,17 +188,27 @@ How the element(s) within a topic are iterated over or hard coded.
 1. .class-name.marketing
 - An area that describes a marketing content section
 
+1. .class-name.overview
+- An area that describes a marketing content section
+
+1. .class-name.cta
+- An area that describes a marketing content section
+
+1. .class-name.warning
+- An area that describes a marketing content section
+
 ## Supplemental or Auxiliary Elements
-1. Button
-2. Href
-3. Tag
-1. Legend
-1. Marketing Burst
-1. Tire Detail Fit Checker/Confirmation
-1. Trust Mark
-1. Trust Burst
-1. Product Rates
-1. Ribbon
+1. .button
+2. .href
+3. .tag
+1. .legend
+1. .marketing-burst
+1. .tire-detail-fit-checker
+1. .tire-detail-fit-confirmation
+1. .trust-mark
+1. .trust-burst
+1. .product-rates
+1. .ribbon
 
 
 ## Singular Topic Units (format?)
@@ -243,14 +256,22 @@ How the element(s) within a topic are iterated over or hard coded.
 
 
 ## Types of Design Pieces
-### Utilities - Items that Execute a function or action
+
+### Action Elements - Items that Execute a function or action
 1. .navigation
 1. .site-search
 1. .sales-cart
 1. .contact-forms
 1. .user-access-signin
 1. .user-sign-in
+1. .get-next-entry
+1. .get-prev-entry
 
+### Utility Elements
+1. .href-block.utility - Div to make the href block level so it makes the entire parent div clickable
+1. .clearboth
+1. .clearleft
+1. .clearright
 
 # Topic Headings
 
@@ -301,7 +322,6 @@ How the element(s) within a topic are iterated over or hard coded.
 1. *Our product is for*
 1. *This is a new way of doing something*
 1. *You can save time by doing something*
-1. 
 
 
 A Page is like a series of essays.
@@ -343,47 +363,53 @@ In a persuasive essay, you are asked to argue an opinion or point of view
 ## Other Style Naming Conventions
 
 ## Other Unit Naming Conventions
-1. Flux Area (changes quickly...like an advertising section)
-1. Auxiliaries - supplemental piece of info
-1. Parallel - comparing information side-by-side
-1. Side-by-side - comparing information side-by-side
-1. Table
-1. Chime Added Benefit Burst...Maybe a small circle
-1. Jot - Quick Idea associated with an article or product (ex. maybe the author wanted to point out a thought like, "Made me smile")
-1. concurrent-thought
-1. Alternatives - Alternative product or approach that may cover the same use case
-1. Revision
-1. Argument
-1. Roundup - A Roundup of items
+1. .flux Area (changes quickly...like an advertising section)
+1. .auxiliaries - supplemental piece of info
+1. .parallel - comparing information side-by-side
+1. .side-by-side - comparing information side-by-side
+1. .table
+1. .chime Added Benefit Burst...Maybe a small circle
+1. .jot - Quick Idea associated with an article or product (ex. maybe the author wanted to point out a thought like, "Made me smile")
+1. .concurrent-thought
+1. .alternatives - Alternative product or approach that may cover the same use case
+1. .revision
+1. .argument
+1. .roundup - A Roundup of items
 
 ## Motif Naming Conventions (Shaped)
-1. Skid
-1. Bar
-1. Ribbon
-1. Peg
-1. Chime/Dot
-1. Dot
-1. Tag
+1. .skid
+1. .bar
+1. .ribbon - such as a breadcrumb ribbon
+1. .peg
+1. .chime/dot
+1. .dot
+1. .tag
 
 ## Motif Naming Conventions (Applied To a Shape)
-1. Pattern
-1. Pattern-Primary
-1. Curvy
-1. Fluid (as in it looks like a liquid with curvy line contours)
-1. Blended (Gradient Blend)
-1. Contoured
-1. Motifs
+1. .pattern
+1. .pattern-primary
+1. .curvy-
+1. .fluid (as in it looks like a liquid with curvy line contours)
+1. .blended (Gradient Blend)
+1. .blend-from-bg (Gradient Blend FROM the background color on the TOP of the div)
+1. .blend-to-bg (Gradient Blend TO the background color on the BOTTOM of the div)
+1. .contour-left - absolutely position the div to the parent div and use an svg
+1. .motif-primary
 
 ## Motif Naming Conventions (Other)
-1. Reserved-For (maybe a motif/style div that can be reserved for a motif or background)
+1. .reserved-for (maybe a motif/style div that can be reserved for a motif or background)
 
 ## State Naming Conventions
-1. Auto Morph
-1. Exit-Modal
-1. Mobile Nav Dimmer
-1. Flipped/Reversed (Reversed colors on every other item, or item specific)
+These are most likely ```@extend``` properties
+1. .auto-morph (automatically changes color in a continuos loop with css or javascript)
+1. .looping-morph (automatically changes color in a continuos loop with css or javascript)
+1. .looping-morph (automatically changes color in a continuos loop with css or javascript)
+1. .exit-modal
+1. .mobile-nav-dimmer
+1. .flipped/reversed (Reversed colors on every other item, or item specific)
+1. .shrinking
 
-## State Naming Conventions
+## TBD Title
 1. Characteristic(s)
 1. Structure(s)
 1. UX Fragment
