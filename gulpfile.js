@@ -7,9 +7,16 @@ var autoprefixer = require('gulp-autoprefixer'); //autoprefix css before concati
 var plumber = require('gulp-plumber');// Prevent pipe breaking caused by errors from gulp plugins, keeps web server running in order to fix errors without having to re-run the task that's broken
 var sourcemaps = require('gulp-sourcemaps'); //create sourcemaps for SASS and JS
 var sass = require('gulp-sass');
-var babel = require("gulp-babel"); // takes future versions of JS (like es6/es2015) and compile it to something browsers can use
+//var babel = require("gulp-babel"); // takes future versions of JS (like es6/es2015) and compile it to something browsers can use
 var del = require('del'); //delete files and folders
 var gzip = require('gulp-gzip');
+var requirejs = require('gulp-requirejs');
+
+var   amdOptimize = require('amd-optimize');
+var    concat = require('gulp-concat');
+
+
+
 
 
 // Image Compression
@@ -106,13 +113,16 @@ var paths = {
 };
 
 // Javascript Scripts
+// For Babel Modules, check out this article:
+//https://blog.revillweb.com/using-es2015-es6-modules-with-babel-6-3ffc0870095b
+
 gulp.task('scripts', function (){
     console.log('Starting scripts task');
 
     return gulp.src([
         paths.scripts.src + "/vendor/bxslider/bxslider.js",
         paths.scripts.src + "/vendor/other/**/*.js",
-        paths.scripts.src + "/custom/**/*.js"
+        paths.scripts.src + "/scripts.mjs"
     
         ]) // load js files into gulp from the SCRIPTS_PATH path variable
         .pipe(plumber(function (err) { //when an error happens, the function gets called 
@@ -122,7 +132,7 @@ gulp.task('scripts', function (){
         }))
         .pipe(sourcemaps.init())
         .pipe(babel())
-        .pipe(uglify()) // pipe(pass source file through multiple steps) | call uglify
+        //.pipe(uglify()) // pipe(pass source file through multiple steps) | call uglify
         //.pipe(size({ gzip: true, showFiles: true }))        
         .pipe(concat('scripts.min.js')) //concatinate with the only argument being the name of the new .js file
         .pipe(sourcemaps.write())
@@ -131,6 +141,38 @@ gulp.task('scripts', function (){
         .pipe(livereload());    // in order to refresh the browser, modify the tasks
                                 // once the files get compressed trigger the reload
 });
+
+
+
+
+// @babel/core — A tool that transpiles ES6 code into JavaScript that any browser will understand.
+// gulp — Our build tool. :)
+// gulp-better-rollup — A Gulp plugin that allows us to use Rollup, a module bundler that allows us to use ES6 imports and exports in our code.
+// rollup-plugin-babel — A Rollup plugin that integrates Babel into the bundling process.
+// rollup-plugin-node-resolve — A Rollup plugin that allows us to use third party modules in node_modules/.
+// rollup-plugin-commonjs — A Rollup plugin that converts CommonJS modules to ES6 so we can import them without issues.
+
+
+var rename = require('gulp-rename')
+
+var rollup = require('gulp-better-rollup')
+var babel = require('rollup-plugin-babel')
+
+gulp.task('lib-build', () => {
+    gulp.src('src/js/main.js')
+      //.pipe(sourcemaps.init())
+      // note that UMD and IIFE format requires `name` but it will be inferred from the source file name `mylibrary.js`            
+      .pipe(rollup({
+          treeshake: false,
+        plugins: [require('rollup-plugin-babel')],
+        format: 'cjs'}))
+      // save sourcemap as separate file (in the same folder)
+      //.pipe(concat('scripts.min.js')) //concatinate with the only argument being the name of the new .js file
+      //.pipe(sourcemaps.write(''))
+      .pipe(gulp.dest('es6'))
+  })
+
+
 
 
 

@@ -1,32 +1,88 @@
 ## Notes
 
 ## Overall Methodology
-### Separation of Content: 
-1. Naming convention through content types
+
+## Context Levels
+1. Global - HTML/Global/Base/Index
+2. View - Body/Template/Page/Landing/Product/Blog/Home/Single/About/Clients/Services/Manual
+3. Region - Header/Main/Aside/Footer
+4. Section - Topic/Collection/Category
+5. Unit - Entry/Property/Product/Listing
+6. Field - Text/Paragraph
+7. Span - Bold/italic/Pseudo/Icon
+
+### CSS Writing Structure: 
+1. Every css declaration block should have minimum 2 selectors.
+1. You should ask, "what context level owns this class?"
+1. Html Element will have the 'global' class
+1. Body Element will have a 'view' class
+1. Selector Specificity Types
+    1. Parent and Child vs. noun + adjective classes
+        1. Parent + Child (for global styling)
+        ```.global .footer { background-color: black; border: white } ```
+        ```.global body { background-color: black }```
+        1. Parent + Child
+        ```.global .homepage .footer { background-color: black; border: white }```
+        ```.global .page .footer { background-color: black; border: white }```
+        ```.global .entry .footer { background-color: black; border: white }```
+        ```.global .product .footer { background-color: black; border: white }```
+        1. .topic.format 
+        ex.
+        ```.feature.collection { background-color: black; border: white }```
+        ```.news.listings { background-color: black; border: white }```
+        ```.listings.property { background-color: black; border: white }```
+        1. .topic.format
+        ```.global .service.collection { background-color: black }```
+        ```.global .blog.feed { background-color: black }```
+        ```.global .job.listings { background-color: black }```
+        1. .topic .property
+        ```.blog .entry { background-color: black }```
+        ```.job .entry { background-color: black }```
+        1. .topic .property.transformation        
+        ```.job .entry.feature { background-color: black }``` 
+        ```.job .entry.feed { background-color: black }``` 
+        ```.job .entry { background-color: black }``` 
+    
+
+### Naming convention through content types
 1. database retrieval methods; 
-2. Style utilities are created separately and applied through `@extend` property within css. 
+2. A property is a style utility that is created separately and applied through `@extend` property within css. 
+1. The context is the page type--it's a single "view" on any device for an entire "page". Web page, app "window", smart watch "screen". 
+1. "What context is this 'property' exist?
+1. "A property will have multiple fields"
+1. A Topic will enclose a content chunk which holds a fragment/field/unit
 
-### 
-
-
+### Pair a Content "Chunk" within Context ()
 
 ## Quick Note on Permalinks...
 Make sure you change the Permalink structure under Settings, or the "views" pages will not be visible unless you visit mysite.com/index.php/custom-page.
 
-## Views
+## Timber Template "Views" Tip
 Then you need to create a page in the WP dashboard in order for the page to show up!
 
-## Class Hierarchy
+## Inspiration
 
-Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft.com, vaersaagod.no, advancedcustomfields.com, cypress.io/
+Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft.com, vaersaagod.no, advancedcustomfields.com, cypress.io, goodyear.com (great accessibility)
 
-## Page (Index) Classes 
-Home | About | Clients | Services | Manual 
 
-## Enclosure Topics (AKA Tables in a Database)
-Splash | Splash_Global | Header_Global | Footer_Global | Case-Study(s)_Feature | Case-Study(s)-Listings | Services | Membership(s) | Process(s) | Value(s) | Testimonial(s) | Created-With | Compatibility | How-To | Supporters | Act/Get-Started | Options | Blog | Subscribe | Social Media | Contact | Sponsors(latest,platinum,gold,silver,bronze,backers) | Steps | Contribute | Vote | Comparison | Search | Lifestyle | Disclosure | Full-Disclosure | Access | Discover | Promotion(s)/Offer(s) | Delivery | New-Product(s) | Work/Project(s) | Project-Archive | Project-Current | Project-Notable | Notable-Mention(s) | Award_Listings | Structure() | Partnership | Organization-Structure | Cloud-Structure/Event-Structure | Biography | Admission | Evaluation | The-Competition | Guests | Career_listings | Career_overview | Goals | Purpose | News/Press | Trusting-Client/Client/Trusted-by | Advertising | Twitter_feed | Twitter_feature | Blog_Listings | Conference(s) | To-Do | On-Boarding | White-Labeling | Premium Integrations | 
 
-### Topic Functional Types
+
+
+## Home Section Purpose Level - Same hierarchy as a Region. Think of these as 'table name in a database', 'marketing point'
+
+Splash | Splash_Global | Header_Global | Footer_Global | Case-Study(s)_Feature | Case-Study(s)-Listings | Services | Membership(s) | Process(s) | Value(s) | Testimonial(s) | Created-With | Compatibility | How-To | Supporters | Act/Get-Started | Options | Blog | Subscribe | Social Media | Contact | Sponsors(latest,platinum,gold,silver,bronze,backers) | Steps | Contribute | Vote | Comparison | Search | Lifestyle | Disclosure | Full-Disclosure | Access | Discover | Promotion(s)/Offer(s) | Delivery | New-Product(s) | Work/Project(s) | Project-Archive | Project-Current | Project-Notable | Notable-Mention(s) | Award_Listings | Structure() | Partnership | Organization-Structure | Cloud-Structure/Event-Structure | Biography | Admission | Evaluation | The-Competition | Guests | Career_listings | Career_overview | Goals | Purpose | News/Press | Trusting-Client/Client/Trusted-by | Advertising | Twitter_feed | Twitter_feature | Blog_Listings | Conference(s) | To-Do | On-Boarding | White-Labeling | Premium Integrations
+
+
+
+## Page Purpose Level (Product Page, Service Page, etc.)
+1. Detail Specs > Detail Spec(+)Emphasis
+2. Rating
+1. Related Content > Related Lessons/Related Articles / Related Courses
+1. Suggested Content
+1. Feature-Set
+
+
+### Pull Level - How the content is being 'pulled from' or 'populated by' the cms.
 Describes how it's pulled from the database. 
 How the element(s) within a topic are iterated over or hard coded.
 
@@ -40,22 +96,40 @@ A list of posts or entries that are pulled from the database as a for-loop in an
 A group of informational pieces that come from outside sources such as twitter or instagram posts, or api. 
 1. class-name features - Includes an option within a post or entry with a "on/off" state one piece of featured or starred item (ex. case-study_feature)
 
-## Page Specific Enclosure Topics Based on the Template Name
-(another word for global...think footer, header, logo copyright, anything found on all or most pages)
-1. [footer] global
-1. [footer] base 
-1. [footer] page
-1. [footer] home - found only on the homepage
-1. [footer] blog
-1. [footer] entry - CraftCMS naming convention found on all entry pages
-1. [footer] entry - found on all 
+## Supplemental or Auxiliary Elements
+1. Button
+2. Href
+3. Tag
+1. Legend
+1. Marketing Burst
+1. Tire Detail Fit Checker/Confirmation
+1. Trust Mark
+1. Trust Burst
+1. Product Rates
+1. Ribbon
 
 
-## Singular Topic Units
-1. class-name listing - each in a list of database posts or entries. They mirror the database in alphabetical, newest/oldest, etc. + number of entries. 
+## Singular Topic Units (format?)
+1. class-name entry - a subdivision of a listings section. In the context of a database posts or entries. They mirror the database in alphabetical, newest/oldest, etc. + number of entries. 
 1. class-name feature - one piece of featured or starred item (ex. case-study_feature)
 1. class-name field - a one-off probably "custom" field found on a specific page. 
 1. class-name static - hardcoded piece of html. Not included in the database.
+
+# Structure and Grid Specific Classes
+- .section
+- .container
+- .split (from running a race, a decendent of the container. Multiple splits exist on the same level)
+
+# Transormations
+- .entry.feature (feature booleon radio button or check box)
+- .entry.repeating (repeats in a loop)
+- .entry (no transformation)
+- .entry.home-feature (no transformation)
+
+
+## Properties
+
+## Contexts
 
 
 ## Tag Class Functions/Purpose
@@ -65,7 +139,17 @@ A group of informational pieces that come from outside sources such as twitter o
 3. Content - Responsible for vertical padding and 
 3. Panel - Also thought of as a content panel. Includes visual aids, text, and headings. Can have multiple panels inside a container.
 
-## Fields 
+## Fields (Asset Type)
+1. text field
+1. text-area field
+1. checkbox field
+1. link field
+1. tags
+1. Excerpt
+1. FeaturedImage/Thumbnail
+
+
+## Asset Type
 1. text field
 1. text-area field
 1. checkbox field
@@ -80,8 +164,8 @@ A group of informational pieces that come from outside sources such as twitter o
 3. Motifs
 
 ## Types of Design Pieces
-1. Utilities
-(Navigation, Search, Cart, User Sign-In, Forms, Access Signin )
+1. Utilities - Items that Execute Function or Action
+( Navigation, Search, Cart, User Sign-In, Forms, Access Signin )
 2. Descriptive Topics
 Things that are quantifiable. Client list (also a good credibility builder). 
 (ex. We *are/have/do/make* this | Jon's hair *is* brown. Our supporters *are* the following companies. We *have* many lamps | These companies *are* already testing better with Cypress )
@@ -91,7 +175,7 @@ Things that are quantifiable. Client list (also a good credibility builder).
 (ex. You should *do* this | *Do* vote | *Do* contribute | *support* our cause | *become* one of us | *contact* us | *test* your code, not your patience | *Read* our Docs | *Chat* with Us | *Contribute* to ... | Do you love us? *Say* it!)
 5. Visual Motifs (Can be structural such as a div box, an absolutely positioned div, large svg, etc.)
 
-## Compare/Contrast Headlines
+## Compare/Contrast Headlines (h1 tags)
 1. *A broader thing has done something, finally this has done that too* - The web has evolved. Finally, testing has too.
 2. *Do this, Not That* - Test your code, not your patience.
 3. *What sets us apart?*
@@ -144,24 +228,45 @@ In a persuasive essay, you are asked to argue an opinion or point of view
 
 ### Subjective Enclosures (Compare, Contrast, )
 
-## Other Naming Conventions
+## Other Style Naming Conventions
+
+## Other Unit Naming Conventions
+1. Flux Area (changes quickly...like an advertising section)
+1. Auxiliary (supplemental piece of info)
+1. Parallel (comparing information side-by-side)
+1. Side-by-side
+1. Table
+1. Tag
+1. Chime
 1. Jot (Quick Idea)
-2. Characteristic(s)
-3. Parallel
-4. Structure()
-5. Argument
-6. Revision
-7. Alternative(s)
-8. Roundup
-9. Flux Area (changes quickly...like an advertising section)
-10. Flipped/Reversed (Reversed colors on every other item, or item specific)
-11. Blended (Gradient Blend)
-12. Reserved-For (maybe a motif/style div that can be reserved for a motif or background)
-13. Chime
-14. Tag
-15. Skid
-16. Bar
-17. Mobile Nav Dimmer
+1. Alternative(s)
+1. Revision
+1. Argument
+1. Roundup
+
+## Motif Naming Conventions
+1. Skid
+1. Bar
+1. Mobile Nav Dimmer
+1. Reserved-For (maybe a motif/style div that can be reserved for a motif or background)
+1. Blended (Gradient Blend)
+1. Flipped/Reversed (Reversed colors on every other item, or item specific)
+1. Fluid (as in it looks like a liquid with curvy line contours)
+1. Curvy
+1. Contoured
+
+## State Naming Conventions
+1. Auto Morph
+1. Exit-Modal
+
+## State Naming Conventions
+1. Characteristic(s)
+4. Structure(s)
+18. UX Fragment
+1. Experience Fragment
+20. Channel
+21. Context
+
 
 
 
