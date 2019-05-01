@@ -18,30 +18,31 @@
 1. Body Element will have a 'view' class
 1. Selector Specificity Types
     1. Parent and Child vs. noun + adjective classes
-        1. Parent + Child (for global styling)
-        ```.global .footer { background-color: black; border: white } ```
-        ```.global body { background-color: black }```
-        1. Parent + Child
-        ```.global .homepage .footer { background-color: black; border: white }```
-        ```.global .page .footer { background-color: black; border: white }```
-        ```.global .entry .footer { background-color: black; border: white }```
-        ```.global .product .footer { background-color: black; border: white }```
-        1. .topic.format 
-        ex.
-        ```.feature.collection { background-color: black; border: white }```
-        ```.news.listings { background-color: black; border: white }```
-        ```.listings.property { background-color: black; border: white }```
+        1. .global + .child (for global styling)            
+            2. ```.global body { background-color: red }```
+            2. ```.global body.homepage { background-color: orange }```
+            2. ```.global body.product { background-color: yellow }```
+            2. ```.global .hamburger-header { background-color: green } ```
+        1. .parent + .child
+            2. ```.global .homepage .footer { background-color: red }```
+            2. ```.global .page .footer { background-color: orange }```
+            2. ```.global .entry .footer { background-color: yellow }```
+            2. ```.global .product .footer { background-color: green }```
+        1. .topic.format         
+            2. ```.feature.collection { background-color: black; border: white }```
+            2. ```.news.listings { background-color: black; border: white }```
+            ```.listings.property { background-color: black; border: white }```
         1. .topic.format
-        ```.global .service.collection { background-color: black }```
-        ```.global .blog.feed { background-color: black }```
-        ```.global .job.listings { background-color: black }```
+            2. ```.global .service.collection { background-color: black }```
+            2. ```.global .blog.feed { background-color: black }```
+            2. ```.global .job.listings { background-color: black }```
         1. .topic .property
-        ```.blog .entry { background-color: black }```
-        ```.job .entry { background-color: black }```
+            2. ```.blog .entry { background-color: black }```
+            2. ```.job .entry { background-color: black }```
         1. .topic .property.transformation        
-        ```.job .entry.feature { background-color: black }``` 
-        ```.job .entry.feed { background-color: black }``` 
-        ```.job .entry { background-color: black }``` 
+            2. ```.job .entry.feature { background-color: black }``` 
+            2. ```.job .entry.feed { background-color: black }``` 
+            2. ```.job .entry { background-color: black }``` 
     
 
 ### Naming convention through content types
