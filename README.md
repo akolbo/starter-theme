@@ -6,7 +6,7 @@
 1. Global - HTML/Global/Base/Index
 2. View - Body/Template/Page/Landing/Product/Blog/Home/Single/About/Clients/Services/Manual
 3. Region - Header/Main/Aside/Footer
-4. Section - Topic/Collection/Category
+4. Section - Topic/Collection/Feed/Listings/Category
 5. Unit - Entry/Property/Product/Listing
 6. Field - Text/Paragraph
 7. Span - Bold/italic/Pseudo/Icon
@@ -70,31 +70,120 @@ Inspired by html5-boilerplate_v7.1.0, bk.com, GetPocket.com, ikea.com, clearleft
 
 ## Home Section Purpose Level - Same hierarchy as a Region. Think of these as 'table name in a database', 'marketing point'
 
-Splash | Splash_Global | Header_Global | Footer_Global | Case-Study(s)_Feature | Case-Study(s)-Listings | Services | Membership(s) | Process(s) | Value(s) | Testimonial(s) | Created-With | Compatibility | How-To | Supporters | Act/Get-Started | Options | Blog | Subscribe | Social Media | Contact | Sponsors(latest,platinum,gold,silver,bronze,backers) | Steps | Contribute | Vote | Comparison | Search | Lifestyle | Disclosure | Full-Disclosure | Access | Discover | Promotion(s)/Offer(s) | Delivery | New-Product(s) | Work/Project(s) | Project-Archive | Project-Current | Project-Notable | Notable-Mention(s) | Award_Listings | Structure() | Partnership | Organization-Structure | Cloud-Structure/Event-Structure | Biography | Admission | Evaluation | The-Competition | Guests | Career_listings | Career_overview | Goals | Purpose | News/Press | Trusting-Client/Client/Trusted-by | Advertising | Twitter_feed | Twitter_feature | Blog_Listings | Conference(s) | To-Do | On-Boarding | White-Labeling | Premium Integrations
+1. .splash-area
+1. .splash
+1. .global .header
+1. .global .footer
+1. .case-study.features
+1. .case-study.listings
+1. .services.collection
+1. .company-process.marketing
+1. .values.marketing
+1. .client-testimonial.listings
+1. .created-with.feature-set - A group of "featured individuals that helped with the companies' product.
+1. .compatibility.topic
+1. .how-to.topic
+1. .membership.topic
+1. .step-by-step-guide.topic
+1. .supporters.topic
+1. .sponsors.
+    2. .latest.level
+    2. .platinum
+    2. .gold
+    2. .silver
+    2. .bronze
+    2. .backers
+Act/Get-Started
+Options
+Blog
+Subscribe
+Social Media
+Contact
 
-
+Steps
+Contribute
+Vote
+Comparison
+Search
+Lifestyle
+Disclosure
+Full-Disclosure
+Access
+Discover
+Promotion(s)/Offer(s)
+Delivery
+New-Product(s)
+Work/Project(s)
+Project-Archive 
+Project-Current
+Project-Notable
+Notable-Mention(s)
+Award_Listings
+Structure()
+Partnership
+Organization-Structure
+Cloud-Structure/Event-Structure
+Biography
+Admission
+Evaluation
+The-Competition
+1. .guests-attending.feature-set
+1. .job.listings
+1. .career.listings
+1. .career.overview
+1. .goals
+1. .purpose
+1. .news
+1. .press
+1. .trusting-clients
+1. .client
+1. .trusted-by
+1. .advertising
+1. .twitter.feed
+1. .twitter.feature
+1. .blog.listings
+1. .conference.listings
+1. .to-do
+1. .on-boarding
+1. .white-labeling
+1. .premium-integrations
 
 ## Page Purpose Level (Product Page, Service Page, etc.)
-1. Detail Specs > Detail Spec(+)Emphasis
-2. Rating
-1. Related Content > Related Lessons/Related Articles / Related Courses
-1. Suggested Content
-1. Feature-Set
-
+1. .detail-specs > .detail-spec-[emphasis]
+2. .star-rating
+1. .related-content > .related-lessons/.related-articles/.related-courses/.related-products/.related-services
+1. .suggested-content
+1. .feature-set
+1. .list
 
 ### Pull Level - How the content is being 'pulled from' or 'populated by' the cms.
 Describes how it's pulled from the database. 
 How the element(s) within a topic are iterated over or hard coded.
 
-
 ### Plural-Groupings/Collections Classes (always written after the Topic)
-1. class-name collection
-Most common section name might be *.feature_collection*. A group or collection of elements, probably of different types. So the section may contain multiple features like "Self-Driving, Costs Nothing, Prepares Your Taxes". Usually these would come in a group of 3.
-1. class-name listings
-A list of posts or entries that are pulled from the database as a for-loop in an alphabetical, newest/oldest, etc. + number of entries. 
-1. class-name feed
-A group of informational pieces that come from outside sources such as twitter or instagram posts, or api. 
-1. class-name features - Includes an option within a post or entry with a "on/off" state one piece of featured or starred item (ex. case-study_feature)
+1. .class-name.collection
+- Is a parent of a curated list of entries/posts. Singular class names precedes, such as *.business-objective* not *.business-objectives*. Including *.collection* perfects the plural nature of the elements children.
+- Most common class combo might be *.feature.collection*, *.business-objective.collection*, *.career-benefit.collection* .
+- The *collection* may contain multiple related or unrelated features like "Self-Driving, Costs Nothing, Prepares Your Taxes, Third Thursays and Weekends Off". 
+- Usually these would come in a group of 3, but not necessarily.
+
+1. .class-name .set
+- Prefer the class *.collection* as *.set* is too vague. 
+- References a selection all of the same type. 
+
+1. .class-name.listings
+- The parent class of a list of entries/posts that are pulled from the database as a for-loop in an alphabetical, newest/oldest, etc. + number of entries. 
+
+1. .class-name.feed
+- The parent class of a list of a group of entries/posts that come from outside sources such as twitter, rss feed or instagram posts, or from an api such as rest api or graphql.
+
+1. .class-name.feature-set
+- The parent class of the a .feature entry
+- Includes an option in the CMS within an entry/post with a "on/off" state 
+- it's one single piece/article/product of featured or starred item (ex. .case-study.feature)
+
+1. .class-name.marketing
+- An area that describes a marketing content section
 
 ## Supplemental or Auxiliary Elements
 1. Button
@@ -118,13 +207,13 @@ A group of informational pieces that come from outside sources such as twitter o
 # Structure and Grid Specific Classes
 - .section
 - .container
-- .split (from running a race, a decendent of the container. Multiple splits exist on the same level)
+- .split (from running a race, a descendent of the container. Multiple splits exist on the same level)
 
-# Transormations
-- .entry.feature (feature booleon radio button or check box)
-- .entry.repeating (repeats in a loop)
-- .entry (no transformation)
-- .entry.home-feature (no transformation)
+# Pull Type Transformation
+- .entry.id - specified by the individual entry/post id
+- .entry.feature - feature boolean radio button or check box
+- .entry.repeating - a repeating element in a loop
+- .entry.pick - choose a status from a dropdown menu in the cms (ex. low-tier, mid-tier, high tier)
 
 
 ## Properties
@@ -139,7 +228,7 @@ A group of informational pieces that come from outside sources such as twitter o
 3. Content - Responsible for vertical padding and 
 3. Panel - Also thought of as a content panel. Includes visual aids, text, and headings. Can have multiple panels inside a container.
 
-## Fields (Asset Type)
+## Field/Asset Level
 1. text field
 1. text-area field
 1. checkbox field
@@ -147,32 +236,56 @@ A group of informational pieces that come from outside sources such as twitter o
 1. tags
 1. Excerpt
 1. FeaturedImage/Thumbnail
+1. Visual Aid - Venn Diagram
+1. Visual Aid - Chart
+1. Visual Aid - Image
+1. Visual Aid - Figure > FigCaption    
 
-
-## Asset Type
-1. text field
-1. text-area field
-1. checkbox field
-1. link field
-
-## Images
-1. Visual Aid
-    1. Venn Diagram
-    2. Chart
-    3. 
-2. Patterns
-3. Motifs
 
 ## Types of Design Pieces
-1. Utilities - Items that Execute Function or Action
-( Navigation, Search, Cart, User Sign-In, Forms, Access Signin )
-2. Descriptive Topics
-Things that are quantifiable. Client list (also a good credibility builder). 
-(ex. We *are/have/do/make* this | Jon's hair *is* brown. Our supporters *are* the following companies. We *have* many lamps | These companies *are* already testing better with Cypress )
-3. Subjective Topics 
-(ex. Our services are done *better*. We make the *smoothest* smoothies. *Made* for people like you, shopping *made easy*. )
-4. Directive Topics
-(ex. You should *do* this | *Do* vote | *Do* contribute | *support* our cause | *become* one of us | *contact* us | *test* your code, not your patience | *Read* our Docs | *Chat* with Us | *Contribute* to ... | Do you love us? *Say* it!)
+### Utilities - Items that Execute a function or action
+1. .navigation
+1. .site-search
+1. .sales-cart
+1. .contact-forms
+1. .user-access-signin
+1. .user-sign-in
+
+
+# Topic Headings
+
+1. Descriptive Topics
+
+1. Objective Topics - Quantifiable or you can prove exist.     
+    2. We *are/have/do/make* this
+    2. Jon's hair *is* brown. 
+    2. Our supporters *are* the following companies.
+    2. We *have* many lamps
+    2. These companies *are* already [doing something] better with [Our Company]
+    2. Client list (also a good credibility builder). 
+
+1. Subjective Topics - Can't prove that it's true, and influences the user to think in a certain way.
+- Our services are done *better*. 
+- We make the *smoothest* smoothies.
+- *Made* for people like you
+- Shopping *made easy*.
+
+4. Directive Topics - Suggest that the Customer Do something. 
+- *Enter* our universe
+- *Come* to our country
+- *Visit* our Tribe
+- You should *do* this
+- *Do* vote
+- *Do* contribute
+- *support* our cause
+- *become* one of us
+- *contact* us
+- *test* your code, not your patience
+- *Read* our Docs
+- *Chat* with Us
+- *Contribute* to ...
+- Do you love us? *Say* it!
+
 5. Visual Motifs (Can be structural such as a div box, an absolutely positioned div, large svg, etc.)
 
 ## Compare/Contrast Headlines (h1 tags)
@@ -223,7 +336,6 @@ In a persuasive essay, you are asked to argue an opinion or point of view
 20. Scholarship
 
 
-
 ### Descriptive Enclosures
 
 ### Subjective Enclosures (Compare, Contrast, )
@@ -232,40 +344,52 @@ In a persuasive essay, you are asked to argue an opinion or point of view
 
 ## Other Unit Naming Conventions
 1. Flux Area (changes quickly...like an advertising section)
-1. Auxiliary (supplemental piece of info)
-1. Parallel (comparing information side-by-side)
-1. Side-by-side
+1. Auxiliaries - supplemental piece of info
+1. Parallel - comparing information side-by-side
+1. Side-by-side - comparing information side-by-side
 1. Table
-1. Tag
-1. Chime
-1. Jot (Quick Idea)
-1. Alternative(s)
+1. Chime Added Benefit Burst...Maybe a small circle
+1. Jot - Quick Idea associated with an article or product (ex. maybe the author wanted to point out a thought like, "Made me smile")
+1. concurrent-thought
+1. Alternatives - Alternative product or approach that may cover the same use case
 1. Revision
 1. Argument
-1. Roundup
+1. Roundup - A Roundup of items
 
-## Motif Naming Conventions
+## Motif Naming Conventions (Shaped)
 1. Skid
 1. Bar
-1. Mobile Nav Dimmer
-1. Reserved-For (maybe a motif/style div that can be reserved for a motif or background)
-1. Blended (Gradient Blend)
-1. Flipped/Reversed (Reversed colors on every other item, or item specific)
-1. Fluid (as in it looks like a liquid with curvy line contours)
+1. Ribbon
+1. Peg
+1. Chime/Dot
+1. Dot
+1. Tag
+
+## Motif Naming Conventions (Applied To a Shape)
+1. Pattern
+1. Pattern-Primary
 1. Curvy
+1. Fluid (as in it looks like a liquid with curvy line contours)
+1. Blended (Gradient Blend)
 1. Contoured
+1. Motifs
+
+## Motif Naming Conventions (Other)
+1. Reserved-For (maybe a motif/style div that can be reserved for a motif or background)
 
 ## State Naming Conventions
 1. Auto Morph
 1. Exit-Modal
+1. Mobile Nav Dimmer
+1. Flipped/Reversed (Reversed colors on every other item, or item specific)
 
 ## State Naming Conventions
 1. Characteristic(s)
-4. Structure(s)
-18. UX Fragment
+1. Structure(s)
+1. UX Fragment
 1. Experience Fragment
-20. Channel
-21. Context
+1. Channel
+1. Context
 
 
 
