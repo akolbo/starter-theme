@@ -276,9 +276,7 @@ How the element(s) within a topic are iterated over or hard coded.
 
 # Topic Headings
 
-1. Descriptive Topics
-
-1. Objective Topics - Quantifiable or you can prove exist.     
+1. Objective Characteristics Topics - Quantifiable. Desicribes a portion of the business that you can prove exists.     
     2. We *are/have/do/make* this
     2. Jon's hair *is* brown. 
     2. Our supporters *are* the following companies.
@@ -286,13 +284,13 @@ How the element(s) within a topic are iterated over or hard coded.
     2. These companies *are* already [doing something] better with [Our Company]
     2. Client list (also a good credibility builder). 
 
-1. Subjective Topics - Can't prove that it's true, and influences the user to think in a certain way.
+1. Subjective Opinionated Topics - Can't prove that it's true, and influences the user to think in a certain way.
 - Our services are done *better*. 
 - We make the *smoothest* smoothies.
 - *Made* for people like you
 - Shopping *made easy*.
 
-4. Directive Topics - Suggest that the Customer Do something. 
+4. Directive Action Topics - Suggest that the Customer Do something. 
 - *Enter* our universe
 - *Come* to our country
 - *Visit* our Tribe
